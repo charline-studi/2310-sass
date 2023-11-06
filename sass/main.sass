@@ -1,11 +1,19 @@
 /*  
-
  MAIN.sass
 
  Fichier principal qui va importer les autres fichiers.  
- Stucture 7 - 1 = un fichier qui gère 7 dossiers. */
+ Stucture 7 - 1 = un fichier qui gère 7 dossiers. 
+ L'ordre des imports : 
+ - reset
+ - vendors
+ - pages
+ - themes
+ - layout
+ - components*/
 
-@use "base/_reset.sass"
+@use "base/_reset"
 
-@use "components/_planet.sass"
-@use "components/_sun.sass"
+@use "pages/_galaxy"
+
+@use "components/_planet"
+@use "components/_sun"

@@ -1,5 +1,4 @@
+@use "../abstracts/_all" as abstracts
+
 .sun
-    background-color: orange
-    width: 200px
-    height: 200px
-    border-radius: 100%
+    @include abstracts.circle(abstracts.$sun-size, yellow)

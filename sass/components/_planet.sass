@@ -1,21 +1,13 @@
-@use "../abstracts/_variables.sass" as var
+@use "../abstracts/_all" as abstracts
 
 .planet
-    background-color: black
-    border-radius: 100%
-    width: 150px
-    height: 150px
+    @include abstracts.circle(150px)
 
     &--mercury
-        width: var.$mercury-size
-        height: var.$mercury-size
-        background-color: yellow
+        @include abstracts.circle(abstracts.$mercury-size, green)
 
     &--venus
-        width: var.$venus-size
-        height: var.$venus-size
-        background-color: purple
+        @include abstracts.circle(abstracts.$venus-size, purple)
 
     &--earth
-        width: var.$earth-size
-        height: var.$earth-size
+        @include abstracts.circle(abstracts.$earth-size, blue)
