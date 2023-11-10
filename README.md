@@ -22,7 +22,7 @@ Nous allons aborder les différentes fonctionnalités de sass : les variables, l
 | 01     | 23/10/2023 | 10h - 11h | On reproduit notre système solaire | https://app.studi.fr/v3/events/57769/replay |
 | 02     | 03/11/2023 | 10h - 11h | On reproduit notre système solaire | https://app.studi.fr/v3/events/57799/replay |
 | 03     | 06/11/2023 | 17h - 18h | On reproduit notre système solaire | https://app.studi.fr/v3/events/57770/replay |
-| 04     | 09/11/2023 | 10h - 11h | On reproduit notre système solaire | Pas encore disponible                       |
+| 04     | 09/11/2023 | 10h - 11h | On reproduit notre système solaire | https://app.studi.fr/v3/events/57800/replay |
 | 05     | 15/11/2023 | 10h - 11h | On reproduit notre système solaire | Pas encore disponible                       |
 
 ## Ressources
