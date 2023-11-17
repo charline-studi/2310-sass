@@ -1,18 +1,22 @@
 @use "../abstracts/_all" as abstracts
-
+@use "sass:math"
 .planet
     @include abstracts.circle(150px)
 
     &--mercury
         @include abstracts.circle(abstracts.$mercury-size, green)
+        $distance-between-mercury-and-sun: abstracts.$gap-between-planets
+        @include abstracts.rotate-around-sun($distance-between-mercury-and-sun, abstracts.$mercury-size)
 
     &--venus
         @include abstracts.circle(abstracts.$venus-size, purple)
+        $distance-between-venus-and-sun: 2 * abstracts.$gap-between-planets + abstracts.$mercury-size
+        @include abstracts.rotate-around-sun($distance-between-venus-and-sun, abstracts.$venus-size, 15s)
 
     &--earth
         @include abstracts.circle(abstracts.$earth-size, blue)
         position: relative
 
     &--mars
-        @include abstracts.circle(abstracts.$earth-size, red)
+        @include abstracts.circle(abstracts.$mars-size, red)
         position: relative

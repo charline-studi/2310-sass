@@ -1,28 +1,27 @@
+@use "../abstracts/_all" as abstracts
+
 .satellite
     background-color: red
-    width: 15px
-    height: 15px
+    width: abstracts.$satellite-size
+    height: abstracts.$satellite-size
     border-radius: 100%
     position: absolute
     top: 0
     left: 50%
     translate: -50% -50%
+    color: white
 
     &--moon
         @extend .satellite
         background-color: grey
-        // animation: animation-rotate 5s linear
+        @include abstracts.rotate-around-planet($planet-size: abstracts.$earth-size)
 
     &--phobos
         @extend .satellite
         background-color: white
+        @include abstracts.rotate-around-planet($planet-size: abstracts.$mars-size)
 
     &--deimos
         @extend .satellite
         background-color: orange
-
-@keyframes animation-rotate
-    0%
-        transform: rotate(0)
-    100%
-        transform: rotate(360deg)
+        @include abstracts.rotate-around-planet($planet-size: abstracts.$mars-size, $duration: 2s)
