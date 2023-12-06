@@ -1,11 +1,11 @@
 @use "./_variables" as var
 @use "sass:math"
 
-@mixin circle($diameter, $color: pink)
+@mixin circle($diameter, $url: '')
     border-radius: 100%
     width: $diameter
     height: $diameter
-    background-color: $color
+    background-image: url($url)
     flex-shrink: 0
 
 @mixin rotate-around-planet($duration: 5s, $planet-size)

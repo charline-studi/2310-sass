@@ -29,3 +29,4 @@ Nous allons aborder les différentes fonctionnalités de sass : les variables, l
 
 - [Extension VS Code compiler SASS](https://marketplace.visualstudio.com/items?itemName=glenn2223.live-sass)
 - [Extension VS Code Coloration syntaxique SASS](https://marketplace.visualstudio.com/items?itemName=Syler.sass-indented)
+- [Documentation SASS](https://sass-lang.com/)
