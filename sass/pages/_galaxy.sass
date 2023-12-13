@@ -2,9 +2,24 @@
 
 .galaxy
     background-color: black
-    display: flex
-    justify-content: flex-start
-    align-items: center
-    height: 100vh
-    gap: abstracts.$gap-between-planets
-    margin-left: calc(50vw - (abstracts.$sun-size / 2))
+    position: relative
+    overflow-x: hidden 
+
+    &__planets-container
+        display: flex
+        justify-content: flex-start
+        align-items: center
+        height: 100vh
+        gap: abstracts.$gap-between-planets
+        padding-left: calc(50vw - (abstracts.$sun-size / 2))
+        position: relative
+        z-index: 1
+        overflow: scroll
+
+    &__stars-container
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        z-index: 0

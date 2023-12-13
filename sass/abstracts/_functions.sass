@@ -1,0 +1,15 @@
+@use 'sass:math'
+
+@function random-position()
+    $number: math.random(99)
+    $unit: '%'
+    @return #{$number} + #{$unit}
+
+@function random-rotate()
+    $degree: math.random(360)
+    @return #{$degree}deg
+
+
+@function random-blur()
+    $blur: math.random(10)
+    @return blur(#{$blur}px)

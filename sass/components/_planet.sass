@@ -2,30 +2,23 @@
 @use "sass:math"
 @use "sass:map"
 
-$list-planets: 'mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune'
-$planets-size: ("mercury": #{abstracts.$mercury-size}, "venus": #{abstracts.$venus-size}, "earth": #{abstracts.$earth-size}, "mars": #{abstracts.$mars-size}, "jupiter": #{abstracts.$jupiter-size}, "saturn": #{abstracts.$saturn-size}, "uranus": #{abstracts.$uranus-size}, "neptune": #{abstracts.$neptune-size})
+$distance-between-mercury-and-sun: abstracts.$gap-between-planets
+$distance-between-venus-and-sun: 2 * abstracts.$gap-between-planets + abstracts.$mercury-size
 
+$list-planets: 'mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune'
+$planets-size: ('mercury': #{abstracts.$mercury-size}, 'venus': #{abstracts.$venus-size}, 'earth': #{abstracts.$earth-size}, 'mars': #{abstracts.$mars-size}, 'jupiter': #{abstracts.$jupiter-size}, "saturn": #{abstracts.$saturn-size}, "uranus": #{abstracts.$uranus-size}, "neptune": #{abstracts.$neptune-size})
+$planets-sun-distance: ('mercury': $distance-between-mercury-and-sun, 'venus': $distance-between-venus-and-sun)
 
 .planet
 
     @each $planet in $list-planets
         &--#{$planet}
+            position: relative
             $background-planet: "../images/#{$planet}.svg"
             $size-planet: map.get($planets-size, $planet)
+            $distance-between-planet-and-sun: map.get($planets-sun-distance, $planet)
             @include abstracts.circle($size-planet, $background-planet)
+            @if $distance-between-planet-and-sun
+                @include abstracts.rotate-around-sun($distance-between-planet-and-sun, $size-planet)
             @if $planet == 'uranus' or $planet == 'saturn'
                 border-radius: 0
-
-    &--mercury
-        $distance-between-mercury-and-sun: abstracts.$gap-between-planets
-        @include abstracts.rotate-around-sun($distance-between-mercury-and-sun, abstracts.$mercury-size)
-
-    &--venus
-        $distance-between-venus-and-sun: 2 * abstracts.$gap-between-planets + abstracts.$mercury-size
-        @include abstracts.rotate-around-sun($distance-between-venus-and-sun, abstracts.$venus-size, 15s)
-
-    &--earth
-        position: relative
-
-    &--mars
-        position: relative

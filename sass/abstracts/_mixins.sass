@@ -16,6 +16,6 @@
 
 @mixin rotate-around-sun($distance-to-sun, $planet-size, $duration: 10s)
     $center-x: -1 * ($distance-to-sun + math.div(var.$sun-size, 2))
-    $center-y: math.div($planet-size, 2)
+    $center-y: calc(math.div($planet-size, 2))
     transform-origin: $center-x $center-y
     animation: animation-rotate $duration linear infinite
